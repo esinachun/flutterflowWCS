@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1068475600072",
+    "firebase_url": "https://wonder-cycle-studio-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "wonder-cycle-studio",
+    "storage_bucket": "wonder-cycle-studio.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1068475600072:android:13e9c1ce82ae62e10869fd",
+        "android_client_info": {
+          "package_name": "health.ai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1068475600072-b3l0uf3rl11t6bnv98aladt4c7mum0kb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC58kCCNiBWAq1Fs9I8odAZn0QbT9kbGV4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1068475600072-b3l0uf3rl11t6bnv98aladt4c7mum0kb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1068475600072-hpjrpj4b87hvvef436g98ead6ogjvpgj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "health.ai"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
