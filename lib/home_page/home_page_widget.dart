@@ -185,7 +185,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     MaterialPageRoute(
                                       builder: (context) =>
                                           AppointmenMakeWidget(
-                                        selectedUserMake: '선택해주세요.',
+                                        selectedUserMake:
+                                            homePageUsersRecord.reference,
                                       ),
                                     ),
                                   );
