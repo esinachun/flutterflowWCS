@@ -1,6 +1,6 @@
+import '../appointmen_make/appointmen_make_widget.dart';
 import '../auth/auth_util.dart';
 import '../backend/backend.dart';
-import '../components/book_appointment_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:auto_size_text/auto_size_text.dart';
@@ -180,15 +180,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               ),
                               child: InkWell(
                                 onTap: () async {
-                                  await showModalBottomSheet(
-                                    isScrollControlled: true,
-                                    context: context,
-                                    builder: (context) {
-                                      return Container(
-                                        height: 720,
-                                        child: BookAppointmentWidget(),
-                                      );
-                                    },
+                                  await Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          AppointmenMakeWidget(
+                                        selectedUserMake: '선택해주세요.',
+                                      ),
+                                    ),
                                   );
                                 },
                                 child: Row(

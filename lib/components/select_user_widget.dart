@@ -3,18 +3,12 @@ import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_animations.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SelectUserWidget extends StatefulWidget {
-  SelectUserWidget({
-    Key key,
-    this.seletedUser,
-  }) : super(key: key);
-
-  final DocumentReference seletedUser;
+  SelectUserWidget({Key key}) : super(key: key);
 
   @override
   _SelectUserWidgetState createState() => _SelectUserWidgetState();
@@ -176,15 +170,10 @@ class _SelectUserWidgetState extends State<SelectUserWidget>
                                           onTap: () async {
                                             await Navigator.push(
                                               context,
-                                              PageTransition(
-                                                type: PageTransitionType
-                                                    .topToBottom,
-                                                duration:
-                                                    Duration(milliseconds: 300),
-                                                reverseDuration:
-                                                    Duration(milliseconds: 300),
-                                                child: AppointmenMakeWidget(
-                                                  selectedUserM:
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    AppointmenMakeWidget(
+                                                  selectedUserMake:
                                                       containerUsersRecord
                                                           .reference,
                                                 ),

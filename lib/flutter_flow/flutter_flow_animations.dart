@@ -71,16 +71,16 @@ extension AnimatedWidgetExtension on Widget {
         if (animationInfo.slideOffset != null) {
           final animationValue = 1 - animationInfo.curvedAnimation.value;
           returnedWidget = Transform.translate(
-            child: child,
+            child: returnedWidget,
             offset: animationInfo.slideOffset * -animationValue,
           );
         }
         if (animationInfo.scale > 0 && animationInfo.scale != 1.0) {
-          final scale = returnedWidget = Transform.scale(
+          returnedWidget = Transform.scale(
             scale: animationInfo.scale +
                 (1.0 - animationInfo.scale) *
                     animationInfo.curvedAnimation.value,
-            child: child,
+            child: returnedWidget,
           );
         }
         if (animationInfo.fadeIn) {
