@@ -8,6 +8,7 @@ import 'schema/users_record.dart';
 import 'schema/appointments_record.dart';
 import 'schema/centers_record.dart';
 import 'schema/center_list_record.dart';
+import 'schema/appointment_type_record.dart';
 import 'schema/serializers.dart';
 
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -18,6 +19,7 @@ export 'schema/users_record.dart';
 export 'schema/appointments_record.dart';
 export 'schema/centers_record.dart';
 export 'schema/center_list_record.dart';
+export 'schema/appointment_type_record.dart';
 
 Stream<List<UsersRecord>> queryUsersRecord(
         {Query Function(Query) queryBuilder,
@@ -46,6 +48,14 @@ Stream<List<CenterListRecord>> queryCenterListRecord(
         int limit = -1,
         bool singleRecord = false}) =>
     queryCollection(CenterListRecord.collection, CenterListRecord.serializer,
+        queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
+
+Stream<List<AppointmentTypeRecord>> queryAppointmentTypeRecord(
+        {Query Function(Query) queryBuilder,
+        int limit = -1,
+        bool singleRecord = false}) =>
+    queryCollection(
+        AppointmentTypeRecord.collection, AppointmentTypeRecord.serializer,
         queryBuilder: queryBuilder, limit: limit, singleRecord: singleRecord);
 
 Stream<List<T>> queryCollection<T>(

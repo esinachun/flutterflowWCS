@@ -58,7 +58,7 @@ class _BookingOldWidgetState extends State<BookingOldWidget> {
                   width: 40,
                   height: 40,
                   child: SpinKitPumpingHeart(
-                    color: FlutterFlowTheme.primaryColor,
+                    color: Color(0xFFED3599),
                     size: 40,
                   ),
                 ),
@@ -379,9 +379,7 @@ class _BookingOldWidgetState extends State<BookingOldWidget> {
                                 appointmentTime: datePicked,
                                 appointmentName:
                                     personsNameController?.text ?? '',
-                                appointmentDescription:
-                                    problemDescriptionController.text,
-                                appointmentEmail: currentUserEmail,
+                                displayName: '',
                               );
                               await AppointmentsRecord.collection
                                   .doc()

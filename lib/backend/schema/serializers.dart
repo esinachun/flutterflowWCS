@@ -4,6 +4,7 @@ import 'users_record.dart';
 import 'appointments_record.dart';
 import 'centers_record.dart';
 import 'center_list_record.dart';
+import 'appointment_type_record.dart';
 
 import 'index.dart';
 
@@ -18,6 +19,7 @@ const kDocumentReferenceField = 'Document__Reference__Field';
   AppointmentsRecord,
   CentersRecord,
   CenterListRecord,
+  AppointmentTypeRecord,
 ])
 final Serializers serializers = (_$serializers.toBuilder()
       ..add(DocumentReferenceSerializer())

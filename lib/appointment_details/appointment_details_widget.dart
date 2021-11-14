@@ -38,7 +38,7 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
               width: 40,
               height: 40,
               child: SpinKitPumpingHeart(
-                color: FlutterFlowTheme.primaryColor,
+                color: Color(0xFFED3599),
                 size: 40,
               ),
             ),
@@ -105,43 +105,17 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(20, 16, 20, 0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Expanded(
-                        child: Text(
-                          'What’s the problem?',
-                          style: FlutterFlowTheme.bodyText1,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(20, 4, 20, 0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Expanded(
-                        child: Text(
-                          appointmentDetailsAppointmentsRecord
-                              .appointmentDescription,
-                          style: FlutterFlowTheme.bodyText2,
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(20, 12, 20, 0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Expanded(
-                        child: Text(
-                          'For',
-                          style: FlutterFlowTheme.bodyText1,
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
+                          child: Text(
+                            'For',
+                            style: FlutterFlowTheme.bodyText1,
+                          ),
                         ),
                       )
                     ],
@@ -163,7 +137,7 @@ class _AppointmentDetailsWidgetState extends State<AppointmentDetailsWidget> {
                                 width: 40,
                                 height: 40,
                                 child: SpinKitPumpingHeart(
-                                  color: FlutterFlowTheme.primaryColor,
+                                  color: Color(0xFFED3599),
                                   size: 40,
                                 ),
                               ),

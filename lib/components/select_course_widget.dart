@@ -7,14 +7,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SelectUserWidget extends StatefulWidget {
-  SelectUserWidget({Key key}) : super(key: key);
+class SelectCourseWidget extends StatefulWidget {
+  SelectCourseWidget({Key key}) : super(key: key);
 
   @override
-  _SelectUserWidgetState createState() => _SelectUserWidgetState();
+  _SelectCourseWidgetState createState() => _SelectCourseWidgetState();
 }
 
-class _SelectUserWidgetState extends State<SelectUserWidget>
+class _SelectCourseWidgetState extends State<SelectCourseWidget>
     with TickerProviderStateMixin {
   final animationsMap = {
     'containerOnActionTriggerAnimation': AnimationInfo(

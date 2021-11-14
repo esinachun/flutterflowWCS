@@ -62,6 +62,15 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
   String get userBicycle;
 
   @nullable
+  BuiltList<DocumentReference> get lessonType;
+
+  @nullable
+  DocumentReference get masterRef;
+
+  @nullable
+  BuiltList<DocumentReference> get userRefList;
+
+  @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference get reference;
 
@@ -79,7 +88,9 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
     ..userBirthday = ''
     ..userHeight = ''
     ..userWeight = ''
-    ..userBicycle = '';
+    ..userBicycle = ''
+    ..lessonType = ListBuilder()
+    ..userRefList = ListBuilder();
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('users');
@@ -115,6 +126,7 @@ Map<String, dynamic> createUsersRecordData({
   String userHeight,
   String userWeight,
   String userBicycle,
+  DocumentReference masterRef,
 }) =>
     serializers.toFirestore(
         UsersRecord.serializer,
@@ -134,4 +146,7 @@ Map<String, dynamic> createUsersRecordData({
           ..userBirthday = userBirthday
           ..userHeight = userHeight
           ..userWeight = userWeight
-          ..userBicycle = userBicycle));
+          ..userBicycle = userBicycle
+          ..lessonType = null
+          ..masterRef = masterRef
+          ..userRefList = null));

@@ -12,7 +12,9 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'home_page/home_page_widget.dart';
 import 'profile_page/profile_page_widget.dart';
 import 'my_appointments/my_appointments_widget.dart';
+import 'maste_appointment_list/maste_appointment_list_widget.dart';
 import 'find_symptoms/find_symptoms_widget.dart';
+import 'master_profil_page/master_profil_page_widget.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -59,13 +61,10 @@ class _MyAppState extends State<MyApp> {
       home: initialUser == null
           ? Container(
               color: Colors.transparent,
-              child: Center(
-                child: Builder(
-                  builder: (context) => Image.asset(
-                    'assets/images/Medical_ScheduleApp_0.0.png',
-                    width: MediaQuery.of(context).size.width * 0.5,
-                    fit: BoxFit.fitWidth,
-                  ),
+              child: Builder(
+                builder: (context) => Image.asset(
+                  'assets/images/Mobile_BG.png',
+                  fit: BoxFit.cover,
                 ),
               ),
             )
@@ -101,7 +100,9 @@ class _NavBarPageState extends State<NavBarPage> {
       'homePage': HomePageWidget(),
       'profilePage': ProfilePageWidget(),
       'myAppointments': MyAppointmentsWidget(),
+      'masteAppointmentList': MasteAppointmentListWidget(),
       'findSymptoms': FindSymptomsWidget(),
+      'masterProfilPage': MasterProfilPageWidget(),
     };
     return Scaffold(
       body: tabs[_currentPage],
@@ -145,6 +146,18 @@ class _NavBarPageState extends State<NavBarPage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(
+              Icons.date_range_outlined,
+              size: 24,
+            ),
+            activeIcon: Icon(
+              Icons.date_range_rounded,
+              size: 24,
+            ),
+            label: 'Appointments',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
               Icons.favorite_border_rounded,
               size: 24,
             ),
@@ -153,6 +166,18 @@ class _NavBarPageState extends State<NavBarPage> {
               size: 24,
             ),
             label: 'Symptoms',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.account_circle_outlined,
+              size: 24,
+            ),
+            activeIcon: Icon(
+              Icons.account_circle_rounded,
+              size: 24,
+            ),
+            label: 'Profile',
             tooltip: '',
           )
         ],

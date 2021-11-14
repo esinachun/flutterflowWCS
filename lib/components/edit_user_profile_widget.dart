@@ -97,7 +97,7 @@ class _EditUserProfileWidgetState extends State<EditUserProfileWidget>
                   width: 40,
                   height: 40,
                   child: SpinKitPumpingHeart(
-                    color: FlutterFlowTheme.primaryColor,
+                    color: Color(0xFFED3599),
                     size: 40,
                   ),
                 ),

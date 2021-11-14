@@ -15,9 +15,6 @@ abstract class AppointmentsRecord
   String get appointmentName;
 
   @nullable
-  String get appointmentDescription;
-
-  @nullable
   DocumentReference get appointmentPerson;
 
   @nullable
@@ -30,15 +27,8 @@ abstract class AppointmentsRecord
   String get appointmentEmail;
 
   @nullable
-  String get email;
-
-  @nullable
   @BuiltValueField(wireName: 'display_name')
   String get displayName;
-
-  @nullable
-  @BuiltValueField(wireName: 'photo_url')
-  String get photoUrl;
 
   @nullable
   String get uid;
@@ -48,8 +38,10 @@ abstract class AppointmentsRecord
   DateTime get createdTime;
 
   @nullable
-  @BuiltValueField(wireName: 'phone_number')
-  String get phoneNumber;
+  DocumentReference get masterRef;
+
+  @nullable
+  DocumentReference get centerRef;
 
   @nullable
   @BuiltValueField(wireName: kDocumentReferenceField)
@@ -57,14 +49,10 @@ abstract class AppointmentsRecord
 
   static void _initializeBuilder(AppointmentsRecordBuilder builder) => builder
     ..appointmentName = ''
-    ..appointmentDescription = ''
     ..appointmentType = ''
     ..appointmentEmail = ''
-    ..email = ''
     ..displayName = ''
-    ..photoUrl = ''
-    ..uid = ''
-    ..phoneNumber = '';
+    ..uid = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('appointments');
@@ -86,30 +74,26 @@ abstract class AppointmentsRecord
 
 Map<String, dynamic> createAppointmentsRecordData({
   String appointmentName,
-  String appointmentDescription,
   DocumentReference appointmentPerson,
   DateTime appointmentTime,
   String appointmentType,
   String appointmentEmail,
-  String email,
   String displayName,
-  String photoUrl,
   String uid,
   DateTime createdTime,
-  String phoneNumber,
+  DocumentReference masterRef,
+  DocumentReference centerRef,
 }) =>
     serializers.toFirestore(
         AppointmentsRecord.serializer,
         AppointmentsRecord((a) => a
           ..appointmentName = appointmentName
-          ..appointmentDescription = appointmentDescription
           ..appointmentPerson = appointmentPerson
           ..appointmentTime = appointmentTime
           ..appointmentType = appointmentType
           ..appointmentEmail = appointmentEmail
-          ..email = email
           ..displayName = displayName
-          ..photoUrl = photoUrl
           ..uid = uid
           ..createdTime = createdTime
-          ..phoneNumber = phoneNumber));
+          ..masterRef = masterRef
+          ..centerRef = centerRef));

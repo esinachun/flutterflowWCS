@@ -59,7 +59,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
               width: 40,
               height: 40,
               child: SpinKitPumpingHeart(
-                color: FlutterFlowTheme.primaryColor,
+                color: Color(0xFFED3599),
                 size: 40,
               ),
             ),
@@ -347,7 +347,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                 width: 40,
                                 height: 40,
                                 child: SpinKitPumpingHeart(
-                                  color: FlutterFlowTheme.primaryColor,
+                                  color: Color(0xFFED3599),
                                   size: 40,
                                 ),
                               ),

@@ -1,5 +1,6 @@
 import '../appointmen_make/appointmen_make_widget.dart';
 import '../appointment_details/appointment_details_widget.dart';
+import '../auth/auth_util.dart';
 import '../backend/backend.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -48,7 +49,9 @@ class _MyAppointmentsWidgetState extends State<MyAppointmentsWidget> {
           await Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => AppointmenMakeWidget(),
+              builder: (context) => AppointmenMakeWidget(
+                selectedUserMake: currentUserReference,
+              ),
             ),
           );
         },
@@ -90,7 +93,7 @@ class _MyAppointmentsWidgetState extends State<MyAppointmentsWidget> {
                         width: 40,
                         height: 40,
                         child: SpinKitPumpingHeart(
-                          color: FlutterFlowTheme.primaryColor,
+                          color: Color(0xFFED3599),
                           size: 40,
                         ),
                       ),
@@ -126,7 +129,7 @@ class _MyAppointmentsWidgetState extends State<MyAppointmentsWidget> {
                                   width: 40,
                                   height: 40,
                                   child: SpinKitPumpingHeart(
-                                    color: FlutterFlowTheme.primaryColor,
+                                    color: Color(0xFFED3599),
                                     size: 40,
                                   ),
                                 ),

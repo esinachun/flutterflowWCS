@@ -213,7 +213,7 @@ class _BookAppointmentWidgetState extends State<BookAppointmentWidget>
                                         width: 40,
                                         height: 40,
                                         child: SpinKitPumpingHeart(
-                                          color: FlutterFlowTheme.primaryColor,
+                                          color: Color(0xFFED3599),
                                           size: 40,
                                         ),
                                       ),
@@ -426,7 +426,6 @@ class _BookAppointmentWidgetState extends State<BookAppointmentWidget>
                               createAppointmentsRecordData(
                             appointmentTime: datePicked,
                             appointmentEmail: currentUserEmail,
-                            appointmentDescription: '',
                             appointmentType: appointTypeValue,
                           );
                           await AppointmentsRecord.collection
