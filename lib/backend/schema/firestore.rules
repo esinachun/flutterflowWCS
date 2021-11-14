@@ -30,7 +30,13 @@ service cloud.firestore {
 
     // WARNING! ONLY FOR TEST MODE: Make sure you properly configure the
     // security rules for this collection before publishing your app.
-    match /appointmentType/{id} {
+    match /master/{id} {
+      allow read, write: if true;
+    }
+
+    // WARNING! ONLY FOR TEST MODE: Make sure you properly configure the
+    // security rules for this collection before publishing your app.
+    match /lessonType/{id} {
       allow read, write: if true;
     }
   }

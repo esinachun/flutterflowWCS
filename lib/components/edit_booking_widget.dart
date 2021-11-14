@@ -25,19 +25,9 @@ class EditBookingWidget extends StatefulWidget {
 
 class _EditBookingWidgetState extends State<EditBookingWidget> {
   DateTime datePicked;
-  TextEditingController personsNameController1;
-  TextEditingController personsNameController2;
   String dropDownValue;
   bool _loadingButton1 = false;
   bool _loadingButton2 = false;
-
-  @override
-  void initState() {
-    super.initState();
-    personsNameController1 =
-        TextEditingController(text: currentUserDisplayName);
-    personsNameController2 = TextEditingController(text: currentPhoneNumber);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -63,74 +53,34 @@ class _EditBookingWidgetState extends State<EditBookingWidget> {
               ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
-                child: AuthUserStreamWidget(
-                  child: TextFormField(
-                    controller: personsNameController1,
-                    obscureText: false,
-                    decoration: InputDecoration(
-                      labelText: '이름',
-                      labelStyle: FlutterFlowTheme.bodyText1,
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.background,
-                          width: 2,
-                        ),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.background,
-                          width: 2,
-                        ),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      filled: true,
-                      fillColor: FlutterFlowTheme.darkBackground,
-                      contentPadding:
-                          EdgeInsetsDirectional.fromSTEB(20, 24, 0, 24),
-                    ),
-                    style: FlutterFlowTheme.subtitle2.override(
-                      fontFamily: 'Lexend Deca',
-                      color: FlutterFlowTheme.textColor,
-                      fontWeight: FontWeight.bold,
-                    ),
+                child: FlutterFlowDropDown(
+                  initialOption: dropDownValue ??=
+                      widget.userAppointment.appointmentType,
+                  options: [
+                    'Type of Appointment',
+                    'Doctors Visit',
+                    'Routine Checkup',
+                    'Scan/Update'
+                  ].toList(),
+                  onChanged: (val) => setState(() => dropDownValue = val),
+                  width: MediaQuery.of(context).size.width * 0.9,
+                  height: 60,
+                  textStyle: FlutterFlowTheme.subtitle2.override(
+                    fontFamily: 'Lexend Deca',
+                    color: FlutterFlowTheme.textColor,
                   ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
-                child: AuthUserStreamWidget(
-                  child: TextFormField(
-                    controller: personsNameController2,
-                    obscureText: false,
-                    decoration: InputDecoration(
-                      labelText: '핸드폰 번호',
-                      labelStyle: FlutterFlowTheme.bodyText1,
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.background,
-                          width: 2,
-                        ),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(
-                          color: FlutterFlowTheme.background,
-                          width: 2,
-                        ),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      filled: true,
-                      fillColor: FlutterFlowTheme.darkBackground,
-                      contentPadding:
-                          EdgeInsetsDirectional.fromSTEB(20, 24, 0, 24),
-                    ),
-                    style: FlutterFlowTheme.subtitle2.override(
-                      fontFamily: 'Lexend Deca',
-                      color: FlutterFlowTheme.textColor,
-                      fontWeight: FontWeight.bold,
-                    ),
+                  icon: Icon(
+                    Icons.keyboard_arrow_down_rounded,
+                    color: FlutterFlowTheme.grayLight,
+                    size: 15,
                   ),
+                  fillColor: FlutterFlowTheme.darkBackground,
+                  elevation: 3,
+                  borderColor: FlutterFlowTheme.background,
+                  borderWidth: 2,
+                  borderRadius: 8,
+                  margin: EdgeInsetsDirectional.fromSTEB(20, 4, 16, 4),
+                  hidesUnderline: true,
                 ),
               ),
               Padding(
@@ -225,38 +175,6 @@ class _EditBookingWidgetState extends State<EditBookingWidget> {
                       ),
                     ),
                   ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
-                child: FlutterFlowDropDown(
-                  initialOption: dropDownValue ??=
-                      widget.userAppointment.appointmentType,
-                  options: [
-                    'Type of Appointment',
-                    'Doctors Visit',
-                    'Routine Checkup',
-                    'Scan/Update'
-                  ].toList(),
-                  onChanged: (val) => setState(() => dropDownValue = val),
-                  width: MediaQuery.of(context).size.width * 0.9,
-                  height: 60,
-                  textStyle: FlutterFlowTheme.subtitle2.override(
-                    fontFamily: 'Lexend Deca',
-                    color: FlutterFlowTheme.textColor,
-                  ),
-                  icon: Icon(
-                    Icons.keyboard_arrow_down_rounded,
-                    color: FlutterFlowTheme.grayLight,
-                    size: 15,
-                  ),
-                  fillColor: FlutterFlowTheme.darkBackground,
-                  elevation: 3,
-                  borderColor: FlutterFlowTheme.background,
-                  borderWidth: 2,
-                  borderRadius: 8,
-                  margin: EdgeInsetsDirectional.fromSTEB(20, 4, 16, 4),
-                  hidesUnderline: true,
                 ),
               ),
               Padding(

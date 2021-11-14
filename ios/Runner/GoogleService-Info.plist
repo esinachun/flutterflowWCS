@@ -3,9 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>1068475600072-hpjrpj4b87hvvef436g98ead6ogjvpgj.apps.googleusercontent.com</string>
+	<string>1068475600072-nvfgnk1r4iviojbgokhcderreq0a1u65.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1068475600072-hpjrpj4b87hvvef436g98ead6ogjvpgj</string>
+	<string>com.googleusercontent.apps.1068475600072-nvfgnk1r4iviojbgokhcderreq0a1u65</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>1068475600072-t01qpgrjf0kqhi806j06n28fmt57fe8f.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDaC3OVEDbaCh4Jn2p-teu4N_rNt595JBs</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>health.ai</string>
+	<string>wcs.ai</string>
 	<key>PROJECT_ID</key>
 	<string>wonder-cycle-studio</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +31,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1068475600072:ios:f88d87c940c618fa0869fd</string>
+	<string>1:1068475600072:ios:fd5441017d4817040869fd</string>
 	<key>DATABASE_URL</key>
 	<string>https://wonder-cycle-studio-default-rtdb.asia-southeast1.firebasedatabase.app</string>
 </dict>
