@@ -1,6 +1,6 @@
 {
-    "name": "health",
-    "short_name": "health",
+    "name": "wcs",
+    "short_name": "wcs",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

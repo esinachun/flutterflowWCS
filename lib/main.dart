@@ -6,7 +6,7 @@ import 'auth/firebase_user_provider.dart';
 import 'auth/auth_util.dart';
 
 import '../flutter_flow/flutter_flow_theme.dart';
-import 'package:health/login_page/login_page_widget.dart';
+import 'package:wcs/login_page/login_page_widget.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'home_page/home_page_widget.dart';
@@ -29,14 +29,14 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  Stream<HealthFirebaseUser> userStream;
-  HealthFirebaseUser initialUser;
+  Stream<WcsFirebaseUser> userStream;
+  WcsFirebaseUser initialUser;
   final authUserSub = authenticatedUserStream.listen((_) {});
 
   @override
   void initState() {
     super.initState();
-    userStream = healthFirebaseUserStream()
+    userStream = wcsFirebaseUserStream()
       ..listen((user) => initialUser ?? setState(() => initialUser = user));
   }
 
@@ -50,7 +50,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Health',
+      title: 'WCS',
       localizationsDelegates: [
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
